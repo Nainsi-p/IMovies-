@@ -2,959 +2,1908 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
 
 
+
+
+
 :root {
   font-family: Inter, Arial, sans-serif;
-  background: #0b0b10;
+  background: var(--bg);
   color: #fff;
 
-  --red: #b9a0ff;
+  --bg: #0b0b10;
+  --accent: #b9a0ff;
+  --accent-light: #d2c4ff;
+  --accent-hover: #9670f5;
   --muted: #b8b2c8;
   --panel: #17141f;
-
-  --lavender-hover: #9670f5;
+  --line: #292a30;
   --plum: #1b1726;
 }
 
 
+
+
+
 * {
+
   box-sizing: border-box;
+
 }
+
+
 
 html {
+
   scroll-behavior: smooth;
+
   scroll-padding-top: 85px;
+
 }
+
+
 
 body {
+
   margin: 0;
+
   min-width: 320px;
+
   background: var(--bg);
+
 }
 
+
+
 button,
+
 input,
+
 select {
+
   font: inherit;
+
 }
 
+
+
 button,
+
 a,
+
 input,
+
 select {
+
   -webkit-tap-highlight-color: transparent;
+
 }
 
+
+
 button,
+
 a {
+
   transition: 180ms ease;
+
 }
+
+
 
 button {
+
   cursor: pointer;
+
 }
+
+
 
 a {
+
   color: inherit;
+
   text-decoration: none;
+
 }
+
+
 
 button:focus-visible,
+
 a:focus-visible,
+
 input:focus-visible,
+
 select:focus-visible {
+
   outline: 2px solid var(--accent);
+
   outline-offset: 4px;
+
 }
+
+
 
 .navbar {
+
   height: 82px;
+
   padding: 0 7%;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   gap: 24px;
+
   border-bottom: 1px solid var(--line);
+
   background: #0c0d10;
+
 }
+
+
 
 .brand {
+
   display: inline-flex;
+
   align-items: center;
+
   gap: 10px;
+
   font: 800 23px "Manrope", sans-serif;
+
   letter-spacing: -1.2px;
+
 }
+
+
 
 .brand-icon {
+
   width: 34px;
+
   height: 34px;
+
   display: grid;
+
   place-items: center;
+
   border-radius: 10px;
+
   color: #151519;
+
   background: var(--accent);
+
   font-size: 19px;
+
 }
+
+
 
 .brand-dot {
+
   color: var(--accent);
+
 }
+
+
 
 .nav-links {
+
   display: flex;
+
   align-items: center;
+
   gap: 34px;
+
   color: var(--muted);
+
   font-size: 13px;
+
 }
+
+
 
 .nav-links a:hover,
+
 .nav-links a.active {
+
   color: white;
+
 }
+
+
 
 .nav-cta,
+
 .secondary-button {
+
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 18px;
+
   padding: 12px 16px;
+
   border: 1px solid #3a3b42;
+
   border-radius: 8px;
+
   font-size: 12px;
+
   font-weight: 600;
+
 }
 
+
+
 .nav-cta:hover,
+
 .secondary-button:hover {
+
   border-color: var(--accent);
+
   color: var(--accent-light);
+
 }
+
+
 
 .nav-cta span {
+
   font-size: 16px;
+
 }
+
+
 
 main {
+
   max-width: 1440px;
+
   margin: 0 auto;
+
   padding: 0 7%;
+
 }
 
+
+
 .hero {
+
   min-height: 465px;
+
   margin-top: 28px;
+
   position: relative;
+
   isolation: isolate;
+
   display: flex;
+
   align-items: center;
+
   overflow: hidden;
+
   border: 1px solid #33303a;
+
   border-radius: 18px;
+
   background: #17141d;
+
 }
+
+
 
 .hero-image {
+
   position: absolute;
+
   z-index: -2;
+
   top: 0;
+
   right: 0;
+
   width: 72%;
+
   height: 100%;
+
   object-fit: cover;
+
   object-position: center 38%;
+
   opacity: 0.8;
+
 }
+
+
 
 .hero-overlay {
+
   position: absolute;
+
   z-index: -1;
+
   inset: 0;
+
   background:
+
     linear-gradient(90deg, #111116 0%, #111116 23%, #111116e8 42%, #11111640 100%),
+
     linear-gradient(0deg, #11111685, transparent 55%);
+
 }
+
+
 
 .hero-content {
+
   max-width: 650px;
+
   padding: 52px;
+
 }
+
+
 
 .eyebrow,
+
 .section-label,
+
 .price-caption {
+
   font-size: 10px;
+
   font-weight: 700;
+
   letter-spacing: 1.8px;
+
 }
+
+
 
 .eyebrow {
+
   display: flex;
+
   align-items: center;
+
   gap: 9px;
+
   color: #d6d1d8;
+
 }
+
+
 
 .live-dot {
+
   width: 7px;
+
   height: 7px;
+
   border-radius: 50%;
+
   background: var(--accent);
+
   box-shadow: 0 0 12px #ff65e380;
+
 }
+
+
 
 .hero-kicker {
+
   margin: 42px 0 12px;
+
   color: var(--accent-light);
+
   font-size: 11px;
+
   letter-spacing: 1.5px;
+
 }
+
+
 
 .hero h1,
+
 .experience-banner h2 {
+
   margin: 0;
+
   font: 800 clamp(37px, 4.5vw, 60px)/1.08 "Manrope", sans-serif;
+
   letter-spacing: -2.8px;
+
 }
+
+
 
 .hero-description {
+
   max-width: 390px;
+
   margin: 20px 0 25px;
+
   color: #c0bdc8;
+
   font-size: 14px;
+
   line-height: 1.8;
+
 }
+
+
 
 .hero-actions {
+
   display: flex;
+
   align-items: center;
+
   flex-wrap: wrap;
+
   gap: 12px;
+
 }
+
+
 
 .primary-button {
+
   display: inline-flex;
+
   justify-content: center;
+
   align-items: center;
+
   gap: 22px;
+
   padding: 14px 18px;
+
   border: 1px solid var(--accent);
+
   border-radius: 8px;
+
   background: var(--accent);
+
   color: #171114;
+
   font-size: 12px;
+
   font-weight: 700;
+
 }
+
+
 
 .primary-button:hover {
+
   background: var(--accent-light);
+
   border-color: var(--accent-light);
+
   transform: translateY(-1px);
+
 }
+
+
 
 .secondary-button {
+
   color: #e4e0e6;
+
 }
+
+
 
 .hero-rating {
+
   display: flex;
+
   align-items: center;
+
   gap: 8px;
+
   margin-top: 32px;
+
   font-size: 11px;
+
 }
+
+
 
 .rating-star {
+
   color: #ffc66e;
+
   font-size: 18px;
+
 }
+
+
 
 .hero-rating > span:last-child {
+
   margin-left: 5px;
+
   color: #aaa5b2;
+
 }
+
+
 
 .hero-index {
+
   position: absolute;
+
   right: 24px;
+
   bottom: 22px;
+
   color: #aaa6b2;
+
   font-size: 11px;
+
 }
+
+
 
 .hero-index span {
+
   color: white;
+
   font-weight: 700;
+
 }
+
+
 
 .movies-section {
+
   padding: 70px 0 75px;
+
 }
+
+
 
 .section-heading {
+
   display: flex;
+
   align-items: end;
+
   justify-content: space-between;
+
   gap: 20px;
+
 }
+
+
 
 .section-label {
+
   margin: 0 0 10px;
+
   color: var(--accent);
+
 }
+
+
 
 .section-heading h2 {
+
   margin: 0;
+
   font: 800 clamp(27px, 3vw, 36px) "Manrope", sans-serif;
+
   letter-spacing: -1.3px;
+
 }
+
+
 
 .section-subtitle {
+
   margin: 10px 0 0;
+
   color: var(--muted);
+
   font-size: 13px;
+
 }
+
+
 
 .movie-count {
+
   padding: 9px 12px;
+
   border: 1px solid var(--line);
+
   border-radius: 6px;
+
   color: #bbb8c2;
+
   font-size: 10px;
+
   letter-spacing: 1px;
+
 }
+
+
 
 .movie-tools {
+
   margin: 30px 0 24px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   flex-wrap: wrap;
+
   gap: 18px;
+
 }
+
+
 
 .genre-filters {
+
   display: flex;
+
   gap: 8px;
+
   flex-wrap: wrap;
+
 }
+
+
 
 .genre-chip {
+
   padding: 9px 15px;
+
   border: 1px solid #303137;
+
   border-radius: 7px;
+
   background: transparent;
+
   color: #b4b1bc;
+
   font-size: 11px;
+
 }
+
+
 
 .genre-chip:hover {
+
   border-color: #77717d;
+
   color: white;
+
 }
 
+
+
 .genre-chip.selected {
+
   border-color: var(--accent);
+
   background: #ff6b6515;
+
   color: var(--accent-light);
+
 }
+
+
 
 .search-box {
+
   min-width: 245px;
+
   display: flex;
+
   align-items: center;
+
   gap: 10px;
+
   padding: 10px 12px;
+
   border: 1px solid #303137;
+
   border-radius: 8px;
+
   color: #aaa6b1;
+
   background: var(--panel);
+
 }
+
+
 
 .search-box > span {
+
   font-size: 23px;
+
   line-height: 1;
+
 }
+
+
 
 .search-box input {
+
   width: 100%;
+
   min-width: 0;
+
   border: 0;
+
   outline: 0;
+
   color: white;
+
   background: transparent;
+
   font-size: 12px;
+
 }
+
+
 
 .search-box input:focus-visible {
+
   outline: 0;
+
 }
+
+
 
 .search-box kbd {
+
   font-size: 10px;
+
   color: #7d7a84;
+
 }
+
+
 
 .movie-grid {
+
   display: grid;
+
   grid-template-columns: repeat(4, minmax(0, 1fr));
+
   gap: 22px;
+
 }
+
+
 
 .movie-card {
+
   min-width: 0;
+
   overflow: hidden;
+
   border: 1px solid #292a30;
+
   border-radius: 12px;
+
   background: var(--panel);
+
   transition: transform 200ms ease, border-color 200ms ease;
+
 }
 
+
+
 .movie-card:hover {
+
   transform: translateY(-5px);
+
   border-color: #55505b;
+
 }
+
+
 
 .poster-button {
+
   width: 100%;
+
   height: 300px;
+
   display: block;
+
   position: relative;
+
   overflow: hidden;
+
   padding: 0;
+
   border: 0;
+
   border-radius: 0;
+
   background: #201e29;
+
   text-align: left;
+
 }
+
+
 
 .movie-poster {
+
   width: 100%;
+
   height: 100%;
+
   display: block;
+
   object-fit: cover;
+
   transition: transform 350ms ease;
+
 }
+
+
 
 .movie-card:hover .movie-poster {
+
   transform: scale(1.045);
+
 }
+
+
 
 .poster-button::after {
+
   content: "";
+
   position: absolute;
+
   inset: 40% 0 0;
+
   background: linear-gradient(transparent, #0d0d10a8);
+
   pointer-events: none;
+
 }
+
+
 
 .poster-rating {
+
   position: absolute;
+
   z-index: 1;
+
   top: 12px;
+
   right: 12px;
+
   padding: 7px 9px;
+
   border: 1px solid #ffffff28;
+
   border-radius: 6px;
+
   background: #101014dd;
+
   color: white;
+
   font-size: 11px;
+
 }
+
+
 
 .poster-rating span {
+
   color: #ffc66e;
+
 }
+
+
 
 .poster-action {
+
   position: absolute;
+
   z-index: 1;
+
   bottom: 16px;
+
   left: 15px;
+
   color: white;
+
   font-size: 11px;
+
   opacity: 0;
+
   transform: translateY(5px);
+
   transition: 180ms ease;
+
 }
+
+
 
 .movie-card:hover .poster-action,
+
 .poster-button:focus-visible .poster-action {
+
   opacity: 1;
+
   transform: translateY(0);
+
 }
+
+
 
 .movie-info {
+
   padding: 17px;
+
 }
+
+
 
 .movie-title-row {
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: baseline;
+
   gap: 8px;
+
 }
+
+
 
 .movie-title-row h3 {
+
   margin: 0;
+
   font: 700 15px "Manrope", sans-serif;
+
 }
+
+
 
 .movie-year {
+
   flex-shrink: 0;
+
   color: #817e89;
+
   font-size: 10px;
+
 }
+
+
 
 .movie-meta {
+
   margin: 9px 0 18px;
+
   color: #a5a1ad;
+
   font-size: 11px;
+
 }
+
+
 
 .movie-meta span {
+
   margin: 0 4px;
+
   color: var(--accent);
+
 }
+
+
 
 .movie-card-bottom {
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   padding-top: 14px;
+
   border-top: 1px solid #292a30;
+
 }
+
+
 
 .movie-card-bottom > div {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 5px;
+
 }
+
+
 
 .price-caption {
+
   color: #898591;
+
   font-size: 8px;
+
   letter-spacing: 1px;
+
 }
+
+
 
 .movie-card-bottom strong {
+
   font: 700 16px "Manrope", sans-serif;
+
 }
+
+
 
 .round-button {
+
   width: 36px;
+
   height: 36px;
+
   display: grid;
+
   place-items: center;
+
   border: 1px solid #424049;
+
   border-radius: 9px;
+
   background: transparent;
+
   color: white;
+
   font-size: 18px;
+
 }
+
+
 
 .round-button:hover {
+
   border-color: var(--accent);
+
   background: var(--accent);
+
   color: #161115;
+
 }
+
+
 
 .empty-state {
+
   padding: 65px 15px;
+
   text-align: center;
+
   border: 1px dashed #38363f;
+
   border-radius: 12px;
+
 }
+
+
 
 .empty-state > span {
+
   font-size: 35px;
+
   color: var(--accent);
+
 }
+
+
 
 .empty-state p {
+
   color: var(--muted);
+
   font-size: 13px;
+
 }
+
+
 
 .empty-state button {
+
   margin-top: 10px;
+
   padding: 10px 15px;
+
   border: 0;
+
   border-radius: 7px;
+
   background: var(--accent);
+
   color: #171114;
+
 }
 
+
+
 .experience-banner {
+
   margin-bottom: 65px;
+
   padding: 45px;
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: end;
+
   gap: 25px;
+
   border: 1px solid #37303b;
+
   border-radius: 15px;
+
   background:
+
     radial-gradient(ellipse at 90% 20%, #a24e5620, transparent 45%),
+
     #17141a;
+
 }
+
+
 
 .experience-banner h2 {
+
   font-size: clamp(30px, 4vw, 43px);
+
 }
+
+
 
 .experience-banner p:not(.section-label) {
+
   max-width: 360px;
+
   color: #b7b2bf;
+
   font-size: 13px;
+
   line-height: 1.7;
+
 }
+
+
 
 .banner-link {
+
   flex-shrink: 0;
+
   padding: 13px 16px;
+
   border: 1px solid #51414a;
+
   border-radius: 8px;
+
   color: var(--accent-light);
+
   font-size: 12px;
+
 }
 
+
+
 .banner-link:hover {
+
   background: #ff6b6515;
+
 }
+
+
 
 .footer {
+
   min-height: 105px;
+
   padding: 25px 7%;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   flex-wrap: wrap;
+
   gap: 15px;
+
   border-top: 1px solid var(--line);
+
   color: #888590;
+
   font-size: 11px;
+
 }
 
+
+
 .footer-brand {
+
   color: white;
+
   font-size: 19px;
+
 }
+
+
 
 .footer-brand .brand-icon {
+
   width: 28px;
+
   height: 28px;
+
   font-size: 15px;
+
 }
+
+
 
 .modal-backdrop {
+
   position: fixed;
+
   z-index: 20;
+
   inset: 0;
+
   display: grid;
+
   place-items: center;
+
   padding: 20px;
+
   overflow-y: auto;
+
   background: #050507d9;
+
   backdrop-filter: blur(9px);
+
 }
+
+
 
 .booking-modal {
+
   position: relative;
+
   width: min(100%, 650px);
+
   max-height: calc(100vh - 40px);
+
   display: grid;
+
   grid-template-columns: 190px minmax(0, 1fr);
+
   overflow-y: auto;
+
   border: 1px solid #3a353f;
+
   border-radius: 15px;
+
   background: #17171d;
+
   box-shadow: 0 25px 100px #0009;
+
 }
+
+
 
 .modal-poster {
+
   width: 100%;
+
   height: 100%;
+
   min-height: 400px;
+
   object-fit: cover;
+
 }
+
+
 
 .modal-content {
+
   padding: 28px;
+
 }
+
+
 
 .modal-content h2 {
+
   margin: 8px 0;
+
   font: 800 26px "Manrope", sans-serif;
+
   letter-spacing: -1px;
+
 }
+
+
 
 .modal-description {
+
   margin: 20px 0;
+
   color: #b4b0bc;
+
   font-size: 12px;
+
   line-height: 1.7;
+
 }
+
+
 
 .modal-close {
+
   position: absolute;
+
   z-index: 2;
+
   top: 12px;
+
   right: 12px;
+
   width: 32px;
+
   height: 32px;
+
   border: 1px solid #55505b;
+
   border-radius: 50%;
+
   background: #141419;
+
   color: white;
+
   font-size: 21px;
+
 }
+
+
 
 .showtime-label {
+
   display: block;
+
   margin-bottom: 8px;
+
   font-size: 11px;
+
   font-weight: 600;
+
 }
+
+
 
 .modal-content select {
+
   width: 100%;
+
   padding: 11px;
+
   border: 1px solid #42404a;
+
   border-radius: 7px;
+
   background: #101115;
+
   color: white;
+
 }
+
+
 
 .booking-total {
+
   margin: 18px 0;
+
   display: flex;
+
   justify-content: space-between;
+
   gap: 10px;
+
   color: #aaa6b1;
+
   font-size: 12px;
+
 }
+
+
 
 .booking-total strong {
+
   color: white;
+
   font-size: 16px;
+
 }
+
+
 
 .modal-book {
+
   width: 100%;
+
 }
+
+
 
 .demo-note {
+
   color: #898591;
+
   font-size: 10px;
+
   line-height: 1.6;
+
   text-align: center;
+
 }
+
+
 
 @media (max-width: 1050px) {
+
   main {
+
     padding: 0 4%;
+
   }
+
+
 
   .navbar {
+
     padding: 0 4%;
+
   }
+
+
 
   .movie-grid {
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
   }
 
+
+
   .poster-button {
+
     height: 330px;
+
   }
+
 }
+
+
 
 @media (max-width: 650px) {
+
   .navbar {
+
     height: auto;
+
     min-height: 74px;
+
     padding: 16px 5%;
+
     flex-wrap: wrap;
+
     gap: 15px;
+
   }
+
+
 
   .brand {
+
     font-size: 21px;
+
   }
+
+
 
   .nav-links {
+
     order: 3;
+
     width: 100%;
+
     justify-content: space-between;
+
     gap: 12px;
+
   }
+
+
 
   .nav-cta {
+
     padding: 10px;
+
     gap: 8px;
+
     font-size: 10px;
+
   }
+
+
 
   main {
+
     padding: 0 5%;
+
   }
+
+
 
   .hero {
+
     min-height: 480px;
+
     margin-top: 18px;
+
     align-items: end;
+
   }
+
+
 
   .hero-image {
+
     width: 100%;
+
     opacity: 0.58;
+
   }
+
+
 
   .hero-overlay {
+
     background: linear-gradient(0deg, #111116 0%, #111116df 48%, #11111622 100%);
+
   }
+
+
 
   .hero-content {
+
     padding: 28px 22px;
+
   }
+
+
 
   .hero-kicker {
+
     margin-top: 65px;
+
   }
+
+
 
   .hero h1 {
+
     font-size: 40px;
+
     letter-spacing: -2px;
+
   }
+
+
 
   .hero-index {
+
     top: 17px;
+
     bottom: auto;
+
   }
+
+
 
   .movies-section {
+
     padding: 52px 0;
+
   }
+
+
 
   .movie-tools {
+
     align-items: stretch;
+
   }
+
+
 
   .search-box {
+
     min-width: 100%;
+
   }
+
+
 
   .movie-grid {
+
     gap: 12px;
+
   }
+
+
 
   .poster-button {
+
     height: 235px;
+
   }
+
+
 
   .movie-info {
+
     padding: 12px;
+
   }
+
+
 
   .movie-title-row {
+
     align-items: start;
+
     flex-direction: column;
+
     gap: 5px;
+
   }
+
+
 
   .movie-title-row h3 {
+
     font-size: 13px;
+
   }
+
+
 
   .movie-meta {
+
     line-height: 1.6;
+
   }
+
+
 
   .experience-banner {
+
     padding: 27px 22px;
+
     align-items: start;
+
     flex-direction: column;
+
   }
+
+
 
   .footer {
+
     align-items: start;
+
     flex-direction: column;
+
   }
+
+
 
   .booking-modal {
+
     grid-template-columns: 1fr;
+
     max-width: 380px;
+
   }
+
+
 
   .modal-poster {
+
     height: 170px;
+
     min-height: 0;
+
     object-position: center 25%;
+
   }
+
+
 
   .modal-content {
+
     padding: 22px;
+
   }
+
 }
+
+
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
+
   *::before,
+
   *::after {
+
     scroll-behavior: auto !important;
+
     transition: none !important;
+
   }
+
 }
+
+
 
 /* Lavender visual identity */
+
 .brand,
+
 .footer-brand {
+
   color: #b9a0ff;
+
 }
+
+
 
 .primary-button,
+
 .nav-cta,
+
 .round-button,
+
 .banner-link,
+
 .empty-state button {
+
   background: #b9a0ff;
+
   color: #171020;
+
 }
+
+
 
 .primary-button:hover,
+
 .nav-cta:hover,
+
 .round-button:hover,
+
 .banner-link:hover {
+
   background: #9670f5;
+
   color: #fff;
+
 }
+
+
 
 .genre-chip.selected {
+
   background: #b9a0ff;
+
   border-color: #b9a0ff;
+
   color: #171020;
+
 }
+
+
 
 .movie-card:hover {
+
   box-shadow: 0 10px 30px #b9a0ff20;
+
 }
+
+
 
 .experience-banner {
+
   border-left-color: #b9a0ff;
+
 }
+
+
 
 .hero {
+
   background-color: #171225;
+
 }
+
+
 
 .search-box:focus-within {
+
   border-color: #b9a0ff;
+
   box-shadow: 0 0 0 2px #b9a0ff25;
+
 }
 
+
+
 .round-button:focus-visible,
+
 .primary-button:focus-visible,
+
 .nav-cta:focus-visible {
+
   outline: 2px solid #fff;
+
   outline-offset: 3px;
+
 }

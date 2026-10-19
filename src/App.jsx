@@ -80,6 +80,7 @@ const [showtime, setShowtime] = useState("7:00 PM");
   const featuredMovie = movies.find((movie) => movie.featured);
 
   return (
+  <>
     <div className="app">
       <header className="navbar">
         <a className="brand" href="#home">
@@ -95,6 +96,7 @@ const [showtime, setShowtime] = useState("7:00 PM");
 
         <a className="nav-cta" href="#movies">Book a movie <span>↗</span></a>
       </header>
+      </div>
 
       <main>
         <section className="hero" id="home">
@@ -256,82 +258,13 @@ const [showtime, setShowtime] = useState("7:00 PM");
         <span>© 2026 IMovies · Student project</span>
       </footer>
       
-{selectedMovie && (
-  <div
-    className="modal-backdrop"
-    onClick={() => setSelectedMovie(null)}
-  >
-    <section
-      className="booking-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="movie-modal-title"
-      onClick={(event) => event.stopPropagation()}
-    >
-      <img
-        className="modal-poster"
-        src={selectedMovie.poster}
-        alt={selectedMovie.title}
-      />
-
+ 
       <div className="modal-content">
         <p className="section-label">YOUR NEXT WATCH</p>
 
-        <h2 id="movie-modal-title">
-          {selectedMovie.title}
-        </h2>
-
-        <p className="modal-description">
-          {selectedMovie.genre} · {selectedMovie.year}
-          <br />
-          ★ {selectedMovie.rating.toFixed(1)} / 10
-        </p>
-
-        <p className="modal-description">
-          Discover this film and get ready for your next
-          cinema experience.
-        </p>
-
-        <div className="booking-total">
-          <span>Ticket price</span>
-          <strong>₹{selectedMovie.price}</strong>
-        </div>
-
-        <button
-          className="primary-button modal-book"
-          onClick={() => {
-            alert(
-              `Next step: choose a showtime for ${selectedMovie.title}.`
-            );
-          }}
-        >
-          Choose showtime ↗
-        </button>
-
-        <p className="demo-note">
-          Demo booking flow. No ticket has been reserved yet.
-        </p>
-
-        <button
-          className="secondary-button"
-          onClick={() => setSelectedMovie(null)}
-        >
-          Close
-        </button>
-      </div>
-
-      <button
-        className="modal-close"
-        aria-label="Close movie details"
-        onClick={() => setSelectedMovie(null)}
-      >
-        ×
-      </button>
-    </section>
-  </div>
-)}
-</>
-
+        
+        
+        
 
       {selectedMovie && (
         <div
@@ -405,9 +338,9 @@ const [showtime, setShowtime] = useState("7:00 PM");
         </div>
       )}
     </div>
+    </>
   );
 }
-
+    
 export default App;
-
 
