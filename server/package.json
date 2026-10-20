@@ -1,0 +1,27 @@
+
+{
+  "name": "imovies-server",
+  "version": "1.0.0",
+  "description": "iMovies backend API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "seed": "node seedMovies.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
+
